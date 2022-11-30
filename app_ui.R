@@ -2,6 +2,7 @@
 library(shiny)
 library(plotly)
 library(dplyr)
+library(shinythemes)
 
 
 # Tab Panel for Introduction
@@ -59,5 +60,6 @@ barchart_panel <- tabPanel(
 ui <- navbarPage(
   "CO2 Emissions",
   intro_panel, 
-  barchart_panel
+  barchart_panel,
+  theme = shinytheme("darkly"),
 )
