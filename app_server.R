@@ -18,10 +18,11 @@ server <- function(input, output) {
     
     plot <- ggplot(data()) +
       geom_line(mapping = aes_string(x = "year", y = input$source)) +
+      scale_y_continuous(labels = scales::comma) +
       labs(
         x = "Year",
         y = "CO2 Emissions (in million tonnes)",
-        caption = "ADD CAPTION THAT EXPLAINS IMPORTANCE"
+        title = "Carbon Dioxide Emissions by Source"
       )
     
     plot

@@ -41,7 +41,9 @@ barchart_sidebar_content <- sidebarPanel(
 
 # Main Panel for Bar Chart
 barchart_main_panel <- mainPanel(
-  plotlyOutput("barchart")
+  plotlyOutput("barchart"),
+  p(align = "center", "This chart displays the overall trends of various carbon dioxide 
+    emissions ranging from 1950 to 2022")
 )
 
 # Tab Panel for Data Visualization
@@ -61,5 +63,5 @@ ui <- navbarPage(
   "CO2 Emissions",
   intro_panel, 
   barchart_panel,
-  theme = shinytheme("darkly"),
+  theme = shinytheme("cerulean"),
 )
