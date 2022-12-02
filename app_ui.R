@@ -43,7 +43,10 @@ barchart_sidebar_content <- sidebarPanel(
 barchart_main_panel <- mainPanel(
   plotlyOutput("barchart"),
   p(align = "center", "This chart displays the overall trends of various carbon dioxide 
-    emissions ranging from 1950 to 2022")
+    emissions for different countries ranging from 1950 to 2022. In many of the countries
+    each of the sources shows a significant increase in the amount of CO2 emissions since
+    1950, thus accounting for an overall increase of carbon dioxide emissions across
+    the globe over the past 70 years.")
 )
 
 # Tab Panel for Data Visualization
