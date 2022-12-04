@@ -4,6 +4,23 @@ library(plotly)
 library(dplyr)
 library(shinythemes)
 
+# highest co2 per capita recently
+co2_cap_recent <- co2_data %>% 
+  filter(year == max(year)) %>% 
+  filter(co2_including_luc_per_capita == max(co2_including_luc_per_capita, na.rm = TRUE)) %>% 
+  pull(co2_including_luc_per_capita)
+
+# average co2 per capita
+co2_cap_average <- co2_data %>% 
+  filter(year == max(year, na.rm = TRUE)) %>% 
+  summarize(co2_including_luc_per_capita = mean(co2_including_luc_per_capita, na.rm = TRUE)) %>% 
+  pull(co2_including_luc_per_capita)
+
+# current co2 per capita for United States
+co2_us <- co2_data %>% 
+  filter(year == max(year)) %>% 
+  filter(country == "United States") %>% 
+  pull(co2_including_luc_per_capita)
 
 # Tab Panel for Introduction
 intro_panel <- tabPanel(
