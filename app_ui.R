@@ -9,7 +9,19 @@ library(shinythemes)
 intro_panel <- tabPanel(
   "Introduction",
   titlePanel("CO2 Emissions Analysis"),
-  p("Sample paragraph")
+  p("This analysis displays a graphic dependent on country of choice and source of carbon
+    dioxide emissions. I have chosen to analyze these specific variables because when
+    looking to reduce carbon dioxide emissions overall, it is crucial to investigate what
+    specifially is causing the emission levels to be high in certain areas. I also decided
+    to sort the data set by country and allow user's to choose their desired country of
+    interest because emissions from various sources will be higher or lower depending on
+    the country. To provide a baseline for this investigation, I have found that the most
+    recent, highest carbon dioxide emissions per capita is", 
+    round(co2_cap_recent, digits = 2), "tonnes per person and the average carbon dixoide
+    emissions per capita for the most recent year in the dataset is",
+    round(co2_cap_average, digits = 2), "tonnes per person. To put this in perspective,
+    I have also found the United States' carbon dioxide emissions per capita for the most
+    recent year, which was found to be", round(co2_us, digits = 2), "tonnes per person.")
 )
 
 # Get data for choices
